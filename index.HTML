@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أعمال الديكور | تصميم داخلي فاخر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a45c; --gold-dark:#a5833f; --dark:#141210; --dark2:#1e1a16;
+  --light:#f6f1e8; --gray:#8a837a; --white:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Tajawal',sans-serif;background:var(--light);color:var(--dark);line-height:1.8}
+h1,h2,h3,.logo{font-family:'Cairo',sans-serif}
+img{max-width:100%;display:block}
+
+/* ===== Header ===== */
+header{position:fixed;top:0;right:0;left:0;z-index:100;background:rgba(20,18,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,164,92,.25)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px}
+.logo{color:var(--white);font-size:24px;font-weight:900}
+.logo span{color:var(--gold)}
+nav ul{display:flex;gap:28px;list-style:none}
+nav a{color:#e8e2d6;text-decoration:none;font-weight:500;transition:.3s}
+nav a:hover{color:var(--gold)}
+.cta-btn{background:var(--gold);color:var(--dark);padding:10px 24px;border-radius:30px;font-weight:700;text-decoration:none;transition:.3s}
+.cta-btn:hover{background:var(--gold-dark);color:#fff}
+
+/* ===== Hero ===== */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:linear-gradient(rgba(20,18,16,.72),rgba(20,18,16,.85)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80') center/cover no-repeat;padding:120px 20px 60px}
+.hero h1{font-size:clamp(34px,6vw,64px);font-weight:900;margin-bottom:18px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:clamp(16px,2.2vw,21px);color:#ddd6c8;max-width:640px;margin:0 auto 36px}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-outline{border:2px solid var(--gold);color:var(--gold);padding:12px 32px;border-radius:30px;text-decoration:none;font-weight:700;transition:.3s}
+.btn-outline:hover{background:var(--gold);color:var(--dark)}
+
+/* ===== Sections ===== */
+section{padding:90px 20px}
+.container{max-width:1200px;margin:auto}
+.section-head{text-align:center;margin-bottom:56px}
+.section-head .tag{color:var(--gold);font-weight:700;letter-spacing:1px}
+.section-head h2{font-size:clamp(28px,4vw,42px);margin-top:6px}
+.section-head .line{width:64px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px}
+
+/* ===== Services ===== */
+.services{background:var(--white)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.card{background:var(--light);border-radius:16px;padding:36px 26px;text-align:center;border:1px solid #ece4d4;transition:.35s}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,0,0,.10);border-color:var(--gold)}
+.card .icon{width:70px;height:70px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-size:30px}
+.card h3{margin-bottom:10px;font-size:20px}
+.card p{color:var(--gray);font-size:15px}
+
+/* ===== Portfolio (الأعمال) ===== */
+.works{background:var(--dark);color:#fff}
+.works .section-head h2{color:#fff}
+.filter-bar{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.filter-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:#cfc7b8;padding:9px 24px;border-radius:30px;cursor:pointer;font-family:'Tajawal';font-size:15px;transition:.3s}
+.filter-btn.active,.filter-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--dark);font-weight:700}
+.works-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.work{position:relative;border-radius:14px;overflow:hidden;height:300px;cursor:pointer}
+.work img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.work:hover img{transform:scale(1.08)}
+.work .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,18,16,.9),rgba(20,18,16,.1));display:flex;flex-direction:column;justify-content:flex-end;padding:22px;opacity:0;transition:.4s}
+.work:hover .overlay{opacity:1}
+.work .overlay h3{color:var(--gold);font-size:20px}
+.work .overlay p{color:#d8d1c3;font-size:14px}
+
+/* ===== Stats ===== */
+.stats{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--dark)}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;text-align:center}
+.stat h3{font-size:44px;font-weight:900}
+.stat p{font-weight:600}
+
+/* ===== About ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-grid .img-wrap{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.15)}
+.about-grid h2{font-size:clamp(26px,3.5vw,38px);margin-bottom:18px}
+.about-grid p{color:var(--gray);margin-bottom:16px}
+.about-list{list-style:none;margin-top:20px}
+.about-list li{padding:8px 0;font-weight:500}
+.about-list li::before{content:"✦";color:var(--gold);margin-left:10px}
+
+/* ===== Testimonials ===== */
+.testimonials{background:var(--white)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.testi{background:var(--light);border-radius:16px;padding:30px;border-right:4px solid var(--gold)}
+.testi .stars{color:var(--gold);font-size:18px;margin-bottom:12px}
+.testi p{color:#4a443c;font-style:italic;margin-bottom:16px}
+.testi .who{font-weight:700}
+.testi .who small{display:block;color:var(--gray);font-weight:400}
+
+/* ===== Contact ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.contact-info h2{font-size:32px;margin-bottom:16px}
+.contact-info p{color:var(--gray);margin-bottom:24px}
+.info-item{display:flex;align-items:center;gap:14px;margin-bottom:16px;font-weight:500}
+.info-item .ic{width:46px;height:46px;border-radius:50%;background:var(--dark);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:19px}
+form input,form textarea,form select{width:100%;padding:14px 18px;margin-bottom:14px;border:1px solid #ddd3c2;border-radius:10px;font-family:'Tajawal';font-size:15px;background:#fff;transition:.3s}
+form input:focus,form textarea:focus,form select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,92,.2)}
+form button{width:100%;background:var(--dark);color:var(--gold);border:none;padding:15px;border-radius:10px;font-size:17px;font-weight:700;font-family:'Cairo';cursor:pointer;transition:.3s}
+form button:hover{background:var(--gold);color:var(--dark)}
+
+/* ===== Footer ===== */
+footer{background:var(--dark);color:#b7afa0;text-align:center;padding:34px 20px}
+footer .logo{font-size:22px;margin-bottom:10px}
+.socials{display:flex;gap:14px;justify-content:center;margin:14px 0}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);text-decoration:none;transition:.3s}
+.socials a:hover{background:var(--gold);color:var(--dark)}
+footer small{color:#7a7368}
+
+@media(max-width:860px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  nav ul{display:none}
+}
+</style>
+<base target="_blank">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">أعمال <span>الديكور</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#works">أعمالنا</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="cta-btn">اطلب استشارة</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div>
+    <h1>نصمّم مساحات <span>تُلهم الحياة</span></h1>
+    <p>شركة متخصصة في الديكور الداخلي والتشطيبات الفاخرة — نحوّل أفكارك إلى واقع يفوق الخيال، من المخطط الأول حتى تسليم المفتاح.</p>
+    <div class="hero-btns">
+      <a href="#works" class="cta-btn">شاهد أعمالنا</a>
+      <a href="#contact" class="btn-outline">احجز استشارة مجانية</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">ماذا نقدم</div>
+      <h2>خدماتنا</h2>
+      <div class="line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="card"><div class="icon">🛋️</div><h3>التصميم الداخلي</h3><p>تصاميم عصرية وكلاسيكية تناسب ذوقك، مع رسومات ثلاثية الأبعاد قبل التنفيذ.</p></div>
+      <div class="card"><div class="icon">🏗️</div><h3>التشطيبات الكاملة</h3><p>تنفيذ تشطيبات فاخرة بأعلى معايير الجودة والدقة في المواعيد.</p></div>
+      <div class="card"><div class="icon">🪑</div><h3>توريد الأثاث</h3><p>أثاث مفصّل حسب الطلب بخامات مستوردة وتفاصيل متقنة.</p></div>
+      <div class="card"><div class="icon">💡</div><h3>الإضاءة والديكور</h3><p>حلول إضاءة ذكية ولمسات ديكورية تضفي هوية فريدة لكل مساحة.</p></div>
+      <div class="card"><div class="icon">📐</div><h3>إدارة المشاريع</h3><p>إشراف هندسي كامل ومتابعة يومية لضمان تنفيذ التصميم بدقة.</p></div>
+      <div class="card"><div class="icon">🌿</div><h3>تنسيق الحدائق</h3><p>تصميم وتنفيذ المساحات الخارجية واللاندسكيب بتناغم مع المبنى.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Works -->
+<section class="works" id="works">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">معرض الأعمال</div>
+      <h2>أحدث أعمالنا</h2>
+      <div class="line"></div>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active">الكل</button>
+      <button class="filter-btn">صالات</button>
+      <button class="filter-btn">غرف نوم</button>
+      <button class="filter-btn">مطابخ</button>
+      <button class="filter-btn">مكاتب</button>
+    </div>
+    <div class="works-grid">
+      <div class="work"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt=""><div class="overlay"><h3>صالة استقبال فاخرة</h3><p>فيلا خاصة — الرياض</p></div></div>
+      <div class="work"><img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80" alt=""><div class="overlay"><h3>مطبخ عصري</h3><p>شقة سكنية — جدة</p></div></div>
+      <div class="work"><img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80" alt=""><div class="overlay"><h3>غرفة نوم رئيسية</h3><p>فيلا خاصة — الدمام</p></div></div>
+      <div class="work"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt=""><div class="overlay"><h3>مكتب تنفيذي</h3><p>شركة مقاولات — الرياض</p></div></div>
+      <div class="work"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt=""><div class="overlay"><h3>صالة معيشة مودرن</h3><p>شقة سكنية — الخبر</p></div></div>
+      <div class="work"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt=""><div class="overlay"><h3>مجلس عربي</h3><p>فيلا خاصة — الرياض</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><h3>+350</h3><p>مشروع منجز</p></div>
+    <div class="stat"><h3>12</h3><p>سنة خبرة</p></div>
+    <div class="stat"><h3>+40</h3><p>مصمم ومهندس</p></div>
+    <div class="stat"><h3>98%</h3><p>رضا العملاء</p></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="img-wrap"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=900&q=80" alt="فريق العمل"></div>
+    <div>
+      <div class="tag" style="color:var(--gold);font-weight:700">قصتنا</div>
+      <h2>شغف بالتفاصيل منذ 2014</h2>
+      <p>بدأنا بحلم بسيط: أن نصنع مساحات تعكس شخصية أصحابها. واليوم، نفخر بتنفيذ مئات المشاريع السكنية والتجارية بأسلوب يجمع بين الأصالة والحداثة.</p>
+      <ul class="about-list">
+        <li>فريق هندسي ومصممون معتمدون دولياً</li>
+        <li>التزام تام بمواعيد التسليم</li>
+        <li>ضمان على جميع أعمال التنفيذ</li>
+        <li>أسعار تنافسية وعقود واضحة</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">قالوا عنا</div>
+      <h2>آراء عملائنا</h2>
+      <div class="line"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi"><div class="stars">★★★★★</div><p>"تعاملت مع أكثر من شركة، لكن الاحترافية والذوق الرفيع اللي شفتهم هنا ما شفتهم في مكان ثاني. شكراً على بيتي الجديد."</p><div class="who">م. خالد العتيبي<small>فيلا سكنية — الرياض</small></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"التصميم ثلاثي الأبعاد طابق الواقع 100%. التزام كامل بالجدول الزمني والميزانية المتفق عليها."</p><div class="who">أ. سارة المنصور<small>شقة — جدة</small></div></div>
+      <div class="testi"><div class="stars">★★★★★</div><p>"صمموا مكتبنا الجديد بطريقة خلّت الموظفين والعملاء يسألون عنهم. تجربة استثنائية من أول مكالمة."</p><div class="who">م. فهد الدوسري<small>شركة — الدمام</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background:var(--white)">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="tag" style="color:var(--gold);font-weight:700">ابدأ مشروعك</div>
+      <h2>تواصل معنا الآن</h2>
+      <p>احجز استشارة مجانية وسيتواصل معك أحد مهندسينا خلال 24 ساعة لدراسة مشروعك.</p>
+      <div class="info-item"><div class="ic">📞</div><div dir="ltr">01141103303</div></div>
+      <div class="info-item"><div class="ic">✉️</div>mohunedabass.com</div>
+      <div class="info-item"><div class="ic">📍</div><div dir="ltr">الرياض — طريق الملك فهد، برج المملكة</div></div>
+      <div class="info-item"><div class="ic">🕘</div>السبت – الخميس: 9 صباحاً – 9 مساءً</div>
+    </div>
+    <form onsubmit="event.preventDefault();alert('شكراً لتواصلك! سنعاود الاتصال بك قريباً.');">
+      <input type="text" placeholder="الاسم الكامل" required>
+      <input type="tel" placeholder="رقم الجوال" required>
+      <input type="email" placeholder="البريد الإلكتروني">
+      <select required>
+        <option value="">نوع المشروع</option>
+        <option>تصميم داخلي</option>
+        <option>تشطيبات كاملة</option>
+        <option>مشروع تجاري</option>
+        <option>استشارة فقط</option>
+      </select>
+      <textarea rows="4" placeholder="اكتب تفاصيل مشروعك..."></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">أعمال <span style="color:var(--gold)">الديكور</span></div>
+  <div class="socials">
+    <a href="#" title="Instagram">in</a>
+    <a href="#" title="X">X</a>
+    <a href="#" title="WhatsApp">✆</a>
+    <a href="#" title="YouTube">▶</a>
+  </div>
+<div>
+  <smaLl>تحت اشرف البشمهندس مهند عباس</smaLl>
+</div>
+  <small>© 2026 أعمال الديكور — جميع الحقوق محفوظة</small>
+</footer>
+
+<script>
+// Portfolio filter
+const btns=document.querySelectorAll('.filter-btn');
+btns.forEach(b=>b.addEventListener(const char *s = "click";,()=>{
+  btns.forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+}));
+</script>
+</body>
+</html>
